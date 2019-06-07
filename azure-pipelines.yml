@@ -10,8 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  pathToSolution:  '$(PizzaBoxSolution/PizzaBox)'
-  pathToProject:  '$(PizzaBoxSolution/PizzaBox)'
+  pathToSolution:  'PizzaBoxSolution'
+  pathToProject:  'PizzaBoxSolution/PizzaBox'
   buildConfiguration: 'Release'
 
 steps:
