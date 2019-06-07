@@ -1,0 +1,22 @@
+﻿
+@model PizzaBox.Models.PuserModel
+
+<div class="content">
+    <div class="image-container">
+        <img src="" /> <h1></h1>
+    </div>
+    <div class="form-container">
+        <form asp-action="ValidateLogin" asp-controller="Login">
+            <label asp-for="Username"> Username: </label><input asp-for="Username" class="field" name="Username" placeholder="Type in your Username" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+            <label asp-for="PPassword"> Password: </label><input asp-for="PPassword" class="field" name="PPassword" placeholder="Type in your Password" />
+            <span asp-validation-for="PPassword" class="text-danger"></span>
+
+            <div class="login-submit" onclick="javascript: document.forms[0].submit();"> Login</div>
+        </form>
+
+        <a asp-action="SignUp"  asp-controller="Login">Sign Up </a>
+    </div>
+</div>
+
+

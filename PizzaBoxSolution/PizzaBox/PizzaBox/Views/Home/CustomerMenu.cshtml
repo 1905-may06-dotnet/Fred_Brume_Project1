@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "CustomerMenu";
+}
+
+   
+    
+    
+    <div class="container" style="padding-top: 60px">
+      
+        <div style="display:flex; flex-wrap:nowrap; width:60%; margin: 0 auto">
+            <img src="@Url.Content("~/images/Pizza.png")" style="width:30%; height: 30%" />
+            <h1 style="font-size: 50px; font-weight:600; font-family:cursive; padding-top:45px;">PIZZA BOX </h1>
+        </div>
+            
+      
+ 
+        <div class="center-block">
+            <form asp-action="Location" asp-controller="Home">
+                <div class="login-submit" onclick="javascript: document.forms[0].submit();"> Order</div>
+            </form>
+
+            <div class="login-submit"> <a style="text-decoration: none; color: white" asp-action="ViewCustomerOrders" asp-controller="Order"> View Recent Order</a> </div>
+            <div class="login-submit">
+                <a style="text-decoration: none; color: white" asp-action="Index" asp-controller="Home"> Sign Out </a>
+
+            </div>
+
+        </div>    
+
+     </div>
+
+
+

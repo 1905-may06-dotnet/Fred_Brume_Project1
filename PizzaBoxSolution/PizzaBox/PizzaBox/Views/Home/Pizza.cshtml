@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PizzaBox.Models.PizzaModel>
+
+@{
+    ViewData["Title"] = "Pizza";
+
+}
+
+<script type="text/javascript">
+    function validate() {
+        var selectChoose = document.getElementById('topSelect');
+        var maxOptions = 2;
+        var optionCount = 0;
+        for (var i = 0; i < selectChoose.length; i++) {
+            if (selectChoose[i].selected) {
+                optionCount++;
+                if (optionCount > maxOptions) {
+                    alert("validation failed, not submitting")
+                    return false;
+                }
+            }
+        }
+        return true;
+        }
+
+</script>
+
+<br /><br />
+<form class="form-horizontal" asp-action="PizzaDetails" asp-controller="Pizza" onsubmit="validate()">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="pizzaId">Pizza: </label>
+        <div class="col-sm-10">
+            <select class="form-control" id="pizzaId" name="PType">
+                @foreach (var item in Model)
+                {
+                <option value="@item.PizzaId">
+                    @item.PType &nbsp;  &nbsp; &nbsp; &nbsp; [@item.PPrice]
+                </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="crustId">Crust: </label>
+        <div class="col-sm-10">
+            <select class="form-control" name="Crust" id="crustId">
+
+                <option value="Sour Dough">  Sour Dough  </option>
+                <option value="Thin"> Thin  </option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="SizeId">Size: </label>
+        <div class="col-sm-10">
+            <select class="form-control" name="PSize" id="SizeId">
+
+                <option value="Small">  Small  </option>
+                <option value="Medium"> Medium  </option>
+                <option value="Large"> Large  </option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="SizeId">...</label>
+        <div class="col-sm-10">
+
+            <button type="button" class="btn btn-success"> Chicken [Default]</button>
+            <button type="button" class="btn btn-success "> Mushrooms [Default]</button>
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="topSelect">Toppings: </label>
+        <div class="col-sm-10">
+            <select class="mdb-select md-form form-control" data-style="btn-default" multiple data-max-options="5" name="Toppingstring" id="topSelect">
+
+                @{
+                    List<ToppingsModel> models = ViewBag.toppingsModel;
+
+                    @foreach (var item1 in models)
+                    {
+                <option value="@item1.TName">  @item1.TName &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [@item1.Cost]</option>
+                    }
+                }
+
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="SizeId"></label>
+        <div class="col-sm-10">
+            <div class="login-submit" onclick="javascript: document.forms[0].submit();"> Add To Order </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

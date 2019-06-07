@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PizzaBox.Models.ToppingsModel>
+
+@{
+    ViewData["Title"] = "Topping";
+}
+
+<h1>Topping</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.TName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+          
+            <td>
+                <a asp-action="Order" asp-route-id="@item.PizzaId" data-id = "@item.PizzaId" asp-controller="Order">Add Toppings</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

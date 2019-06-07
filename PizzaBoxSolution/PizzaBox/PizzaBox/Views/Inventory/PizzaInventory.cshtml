@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PizzaBox.Models.PizzaModel>
+
+@{
+    ViewData["Title"] = "PizzaInventory";
+}
+
+<br />
+<h1>Pizza Inventory</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToppingList)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crust)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToppingList)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crust)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="center-block">
+    <div class="login-submit">
+        <a style="text-decoration: none; color: white" asp-action="EmployeeMenu" asp-controller="Home"> Go Back To Menu </a>
+    </div>
+ </div>

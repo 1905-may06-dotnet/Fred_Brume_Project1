@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PizzaBox.Models.PizzaModel>
+
+@{
+    ViewData["Title"] = "PizzaDetails";
+}
+
+<h1>Order Details</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToppingList)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crust)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ToppingList)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Crust)
+                </td>
+                <td>
+                    @Html.ActionLink("Detail", "Edit", new { /* id=item.PrimaryKey */ }) |
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<form asp-action="PlaceOrder" asp-controller="Order">
+    <div class="login-submit" onclick="javascript: document.forms[0].submit();"> Place Order </div>
+</form>
+
+    
+
+
