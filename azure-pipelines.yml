@@ -33,7 +33,7 @@ steps:
     SonarCloud: 'PizzaBoxSonar'
     organization: 'fredbrume-github'
     scannerMode: 'MSBuild'
-    projectKey: 'FredBrume_training-code'
+    projectKey: 'f06b519749ddb9fa491e06d3f26b6f4e006c429f'
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
