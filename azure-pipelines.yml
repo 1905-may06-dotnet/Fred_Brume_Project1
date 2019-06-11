@@ -12,7 +12,6 @@ pool:
 variables:
   pathToSolution:  'PizzaBoxSolution'
   pathToProject:  'PizzaBoxSolution/PizzaBox'
-  pathToTest:  'PizzaBoxSolution/RestaurantTest'
   buildConfiguration: 'Release'
 
 steps:
