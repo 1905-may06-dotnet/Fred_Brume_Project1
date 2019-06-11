@@ -23,6 +23,7 @@ steps:
   displayName: Build
   inputs:
     command: build
+    projects: '**/*.csproj'
     arguments: 'configuration Release'
 
 
