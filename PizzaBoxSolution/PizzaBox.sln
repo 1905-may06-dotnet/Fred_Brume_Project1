@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Testing", "RestaurantTest\PizzaBox.Testing.csproj", "{05A0156D-10BE-45B2-A6D7-FEAFC0D1BA11}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Domain", "RestaurantLogic\PizzaBox.Domain.csproj", "{537D6579-1AAE-44EB-B6EF-17FC5678E8E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Data", "RestaurantData\PizzaBox.Data.csproj", "{1B1103BA-EFCC-40BB-B8E7-6940CBCDAD4F}"
