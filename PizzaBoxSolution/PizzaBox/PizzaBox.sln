@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Data", "..\Restaur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Domain", "..\RestaurantLogic\PizzaBox.Domain.csproj", "{F6C89BC9-C32B-49CA-80B1-819171050379}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaBox.Testing", "..\RestaurantTest\PizzaBox.Testing.csproj", "{E7AA669C-A4F4-42B3-96D4-1F836BDE777D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{F6C89BC9-C32B-49CA-80B1-819171050379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6C89BC9-C32B-49CA-80B1-819171050379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6C89BC9-C32B-49CA-80B1-819171050379}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7AA669C-A4F4-42B3-96D4-1F836BDE777D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7AA669C-A4F4-42B3-96D4-1F836BDE777D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7AA669C-A4F4-42B3-96D4-1F836BDE777D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7AA669C-A4F4-42B3-96D4-1F836BDE777D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
