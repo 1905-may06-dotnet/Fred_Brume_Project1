@@ -15,14 +15,13 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-  workingDirectory: '$(pathToSolution)'
+
 
 - task: DotNetCoreCLI@1
   displayName: Build
   inputs:
     command: build
+    projects: '$(pathToSolution)'
     arguments: 'configuration Release'
     
 
