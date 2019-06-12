@@ -13,7 +13,7 @@ variables:
   buildConfiguration: 'Release'
   pathToSolution:  'PizzaBoxSolution/'
   pathToProject:  'PizzaBoxSolution/PizzaBox/'
-  pathToTest:  'PizzaBoxSolution/PizzaboxTest'
+  pathToTest:  'PizzaBoxSolution/PizzaboxTest/Test/'
 
 steps:
 - task: SonarCloudPrepare@1
