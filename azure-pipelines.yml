@@ -10,20 +10,28 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  pathToSolution:  'PizzaBoxSolution'
-  pathToProject:  'PizzaBoxSolution/PizzaBox'
   buildConfiguration: 'Release'
+  pathToSolution:  'PizzaBoxSolution/'
+  pathToProject:  'PizzaBoxSolution/PizzaBox/'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-  workingDirectory: '$(pathToSolution)'
-
 - task: DotNetCoreCLI@1
   displayName: Build
   inputs:
     command: build
-    arguments: 'configuration Release'
+    projects: '$(pathToProject)'
+    arguments: '$(buildConfiguration)'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'PizzaBoxSonar'
+    organization: 'fredbrume-github'
+    scannerMode: 'MSBuild'
+    projectKey: 'f06b519749ddb9fa491e06d3f26b6f4e006c429f'
+    projectName: 'SonarCloud Analysis'
+
+
+    
 
 
 
