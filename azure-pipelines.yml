@@ -15,17 +15,9 @@ variables:
   pathToProject:  'PizzaBoxSolution/PizzaBox/'
   pathToTest:  'PizzaBoxSolution/PizzaboxTest/Test/'
 
-  #BUILD
-steps:
-- task: DotNetCoreCLI@1
-  displayName: Build
-  inputs:
-    command: build
-    projects: '$(pathToProject)'
-    arguments: '$(buildConfiguration)'
 
 # SONAR PREPARE ANALYSIS CONFIG
-
+steps:
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'PizzaBoxSonar'
@@ -33,10 +25,15 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'f06b519749ddb9fa491e06d3f26b6f4e006c429f'
     projectName: 'SonarCloud Analysis'
-    extraProperties: |
-      sonar.cs.opencover.reportsPaths="$(Build.ArtifactStagingDirectory)/coverage/*"
-      sonar.cs.vstest.reportsPaths="$(Build.ArtifactStagingDirectory)/test/*.trx"
   displayName: 'Sonar Prepare Analysis'
+
+#BUILD
+- task: DotNetCoreCLI@1
+  displayName: Build
+  inputs:
+    command: build
+    projects: '$(pathToProject)'
+    arguments: '$(buildConfiguration)'
 
 #BASIC TEST
 - task: DotNetCoreCLI@2
