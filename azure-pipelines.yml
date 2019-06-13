@@ -30,7 +30,7 @@ steps:
   displayName: 'Sonar Prepare Analysis'
 
 #BUILD
-- task: DotNetCoreCLI@1
+- task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: build
